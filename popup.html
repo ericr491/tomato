@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Popup</title>
+    <style>
+      p {
+        display: inline;
+        font-size: 40px;
+        text-align: center;
+      }
+
+      body {
+        width: 300px;
+        height: 200px;
+        background-color: tomato;
+      }
+
+      #main {
+        color: bisque;
+      }
+
+      .wrapper {
+        display: flex;
+        justify-content: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="main">
+      <h1 style="text-align: center">Timer:</h1>
+      <br />
+      <p id="hours">0h</p>
+      <p id="mins">0m</p>
+      <p id="secs">0s</p>
+      <div id="buttonbox" class="wrapper"></div>
+    </div>
+    <script src="./timer.js"></script>
+  </body>
+</html>

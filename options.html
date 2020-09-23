@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Options</title>
+  </head>
+  <body>
+    <h1>Options menu</h1>
+    <br />
+    <div id="websiteList">
+      <textarea id="websiteTextArea" rows="6" cols="50"> </textarea>
+    </div>
+    <form id="form1">
+      <label for="websiteText">Input website here!</label>
+      <input id="websiteText" type="text" />
+      <br />
+      <input type="radio" id="add" name="addOrRemove" />
+      <label for="add">Add website</label>
+      <input type="radio" id="remove" name="addOrRemove" />
+      <label for="remove">Remove website</label>
+      <br />
+      <input type="submit" value="Submit" />
+    </form>
+    <script src="./storage.js"></script>
+  </body>
+</html>
