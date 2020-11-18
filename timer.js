@@ -1,14 +1,19 @@
+// these are not persistent like background.js b/c the script gets reload everytime popup.html is open/close, now it's persistent b/c we retrieve the date 
 let intervalID
 let date
 
+// Auto-runs everytime popup.html is opened 
 chrome.runtime.sendMessage({ msg: 'GET_TIME' }, (response) => {
+    // If background.js sends a response back to this message, it will retrieve the timer that we already set previously
 
+    // If timer is not null, so first createTimer() is called
     if (response.time) {
         date = new Date(response.time.valueOf())
         displayTimer(date)
     }
 })
 
+// We do not need to keep track of current time b/c it's automatically generated using Date.now()
 
 function displayTimer(dateObj) {
     let desiredTime = new Date(dateObj.valueOf())
@@ -43,14 +48,17 @@ function createTimer() {
         port.postMessage({ message: 'START_TIME' })
         port.onMessage.addListener(function (msg) {
             if (msg.state === 'BLOCK_MODE') {
+                // 30 minutes from now
                 date.setTime(Date.now() + 1500000)
                 port.postMessage({ when: date })
             } else if (msg.state === 'UNBLOCK_MODE') {
+                // 5 minutes from now
                 date.setTime(Date.now() + 300000)
                 port.postMessage({ when: date })
             }
             displayTimer(date)
         })
+        // Show the timer on popup.html
     } else {
         alert('Time is not up yet!')
     }

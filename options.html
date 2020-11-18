@@ -8,6 +8,19 @@
   <body>
     <h1>Options menu</h1>
     <br />
+    <form id='account'>
+      Username: <input type="text" id="username" />
+      Password: <input type="password" id="password"/>
+      <br/>
+      <button type="submit" id='loginButton' >Login</button>
+      <button type="submit" id='registerButton'>Register</button>
+    </form>
+    <span>
+    </span>
+    <div>
+      <button id='logoutButton' style="display:none;">Logout</button>
+    </div>
+    <br />
     <div id="websiteList">
       <textarea id="websiteTextArea" rows="6" cols="50"> </textarea>
     </div>
@@ -23,5 +36,6 @@
       <input type="submit" value="Submit" />
     </form>
     <script src="./storage.js"></script>
+    <script src='./login.js'></script>
   </body>
 </html>
